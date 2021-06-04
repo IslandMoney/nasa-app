@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "starthttps": "ng serve --ssl --ssl-key c:\\Users\\olger\\.certificates\\localhost.key  --ssl-cert c:\\Users\\olger\\.certificates\\localhost.crt",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -11,7 +12,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~11.0.6",
+    "@angular/animations": "^11.0.9",
     "@angular/common": "~11.0.6",
     "@angular/compiler": "~11.0.6",
     "@angular/core": "~11.0.6",
@@ -19,6 +20,8 @@
     "@angular/platform-browser": "~11.0.6",
     "@angular/platform-browser-dynamic": "~11.0.6",
     "@angular/router": "~11.0.6",
+    "ngx-spinner": "^11.0.1",
+    "ngx-toastr": "^14.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

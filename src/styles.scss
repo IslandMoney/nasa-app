@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@import './assets/styles/general';
+@import './assets/styles/font';
+@import './assets/normalize/normalize.css';
+@import '~ngx-toastr/toastr';
+
+html,
+body {
+  height: 100vh;
+  height: auto;
+  margin: 0;
+}

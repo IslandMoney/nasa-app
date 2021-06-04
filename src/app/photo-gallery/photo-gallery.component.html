@@ -1,0 +1,39 @@
+<div class="photo-gallery">
+  <div class="photo-gallery__header">
+    <div class="photo-gallery__header__main-text">
+      Curiosity Rover Image Gallery
+    </div>
+    <div class="photo-gallery__header__actions">
+      <input type="number"
+             min="0"
+             max="3137"
+             [(ngModel)]="sol"
+             (change)="solChanged()"
+             placeholder="Sol">
+      <button class="button"
+              (click)="getImages()">Go to Sol!</button>
+      <!-- <input type="number" placeholder="Page"> -->
+    </div>
+  </div>
+  <div (scroll)="onScroll($event)"
+       class="photo-gallery__body">
+    <div *ngFor="let photo of photos?.photos"
+         class="photo-gallery__photo">
+      <img [src]="photo.img_src"
+           (load)="imageLoaded()"
+           alt="Rover Photo">
+      <div class="photo-gallery__photo-camera">
+        {{photo.camera.full_name}} ({{photo.camera.name}})
+      </div>
+      <div class="photo-gallery__photo-earth-date">Earth Date: {{photo.earth_date | date: 'DD/MM/YYYY'}}</div>
+      <div class="photo-gallery__photo-sol">Sol: {{photo.sol}}</div>
+    </div>
+  </div>
+</div>
+<ngx-spinner bdColor="rgb(0,0,0, 1)"
+             size="medium"
+             color="#fff"
+             type="ball-8bits"
+             [fullScreen]="true">
+  <p style="color: white"> {{spinnerText}} </p>
+</ngx-spinner>
