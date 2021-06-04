@@ -40,7 +40,6 @@ export class PhotoGalleryComponent implements OnInit, OnDestroy {
     this.subscriptions.add(
       this.imageService.getImages(this.sol, this.page).subscribe(res => {
         this.photos = res;
-        console.log(this.photos.photos);
       })
     );
   }
