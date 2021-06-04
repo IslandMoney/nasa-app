@@ -1,8 +1,8 @@
-export interface Photos {
+export class Photos {
     photos: Photo[];
 }
 
-export interface Photo {
+export class Photo {
     id: number;
     img_src: string;
     earth_date: string;
@@ -11,14 +11,14 @@ export interface Photo {
     rover: Rover;
 }
 
-export interface PhotoCamera {
+export class PhotoCamera {
     id: number;
     rover_id: number;
     full_name: string;
     name: string;
 }
 
-export interface Rover {
+export class Rover {
     id: number;
     landing_date: string;
     launch_date: string;

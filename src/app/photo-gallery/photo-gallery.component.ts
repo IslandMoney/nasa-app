@@ -28,6 +28,8 @@ export class PhotoGalleryComponent implements OnInit, OnDestroy {
     private toastr: ToastrService) { }
 
   ngOnInit() {
+    this.photos = new Photos();
+    this.photos.photos = [];
     this.initData();
   }
 
@@ -39,16 +41,15 @@ export class PhotoGalleryComponent implements OnInit, OnDestroy {
     this.spinner.show();
     this.subscriptions.add(
       this.imageService.getImages(this.sol, this.page).subscribe(res => {
-        this.photos = res;
+        this.photos.photos = this.photos.photos.concat(res.photos);
       })
     );
   }
 
   imageLoaded() {
     this.imageLoadedCounter++;
-    if (this.imageLoadedCounter === this.photos.photos.length) {
+    if (this.imageLoadedCounter + 1 === this.photos.photos.length) {
       this.spinner.hide();
-      this.imageLoadedCounter = 0;
     }
   }
 
